@@ -5,4 +5,5 @@
 - 개발 시작 : 23.06.21
 - 기술 스택 : Fe: React , Be : Django
 
-[Notion][https://www.notion.so/jjuin/TOY2-a4b5657e1715402086731727f9fead0d?pvs=4]
+[Notion][Notionlink]
+[Notionlink] : https://www.notion.so/jjuin/TOY2-a4b5657e1715402086731727f9fead0d?pvs=4
