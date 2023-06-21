@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'api',
 ]
 
+AUTH_USER_MODEL = 'api.User'
+
 ROOT_URLCONF = 'back.urls'
 
 TEMPLATES = [
