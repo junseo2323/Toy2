@@ -1,17 +1,19 @@
-import { useContext } from "react";
+import "./loginPage.scss"
+
+import { useContext, useState, useEffect } from "react";
 import { AuthContext } from "../App";
 import { useNavigate } from "react-router-dom";
 
 const LoginPage = () => {
   const {loginUser , user} = useContext(AuthContext);
-  
+  const [islogined, setIslogined] = useState("False");
   const navigator = useNavigate();
 
   const handleSubmit = e => {
     e.preventDefault();
     const username = e.target.username.value;
     const password = e.target.password.value;
-    username.length > 0 && loginUser(username, password);
+    setIslogined(loginUser(username, password));
   };
 
   const handleRegister = () => {
@@ -20,22 +22,35 @@ const LoginPage = () => {
 
   if (user) {
     navigator("/");
-  }
+  } 
 
   return (
-    <section>
-      <form onSubmit={handleSubmit}>
-        <h1>Login </h1>
-        <hr />
-        <label htmlFor="username">Username</label>
-        <input type="text" id="username" placeholder="Enter Username" />
-        <label htmlFor="password">Password</label>
-        <input type="password" id="password" placeholder="Enter Password" />
-        <button type="submit">Login</button>
-        <button onClick={handleRegister}>Register</button>
-      </form>
-    </section>
+    <div className="loginPage">
+      <section className="login-form">
+        <h1>MIRACLE</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="int-area">
+              <input type="text" name="username" id="username"
+              autoComplete="off" required />
+              <label>아이디</label>
+          </div>
+          <div className="int-area">
+              <input type="password" name="password" id="password"
+              autoComplete="off" required />
+              <label>비밀번호</label>
+          </div>
+          <div className="btn-area">
+            <button type="submit">로그인</button>
+          </div>
+        </form>
+        <div className="caption">
+          <button href="">비밀번호를 잊어버리셨나요?</button>
+          <button onClick={handleRegister}>회원가입 </button>
+        </div>
+      </section>
+    </div>
   );
 };
 
 export default LoginPage;
+ 

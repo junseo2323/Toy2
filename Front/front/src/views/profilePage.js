@@ -4,7 +4,8 @@ import { useContext } from 'react';
 import { AuthContext } from "../App";
 
 const ProfilePage = () => {
-    const { user } = useContext(AuthContext);
+    const { user,refreshUser,authTokens } = useContext(AuthContext);
+    refreshUser(user.username);
     return(
         <div>
             ProfilePage
